@@ -15,11 +15,11 @@ const dollarFormat = new Intl.NumberFormat('en-US', {
 //!Use console.log to display the number of wrappers needed for each type of coin.
 //!Use console.log to display the total amount in dollars.
 const coinNames = ["pennies", "nickels", "dimes", "quarters"];
-const coinValue = [0.01, 0.05, 0.10, 0.25];
+const coinValue = [0.01, 0.05, 0.1, 0.25];
 const coinAmount = [300, 300, 300, 300];
 const coinsPerWrapper = [50, 40, 50, 40];
 let totalValue = 0;
-debugger
+
 for (let i = 0; i < coinNames.length; i++) {
     
     totalValue += coinValue[i] * coinAmount[i];
@@ -31,14 +31,15 @@ for (let i = 0; i < coinNames.length; i++) {
     console.log(`Wrappers needed for ${coinNames[i]} is ${wrappersNeeded}`);
     console.log(`Remaining ${coinNames[i]}: ${remainingCoins}`);
     console.log(`Value of ${coinNames[i]} is ${dollarFormat.format(valueOfCoins)}`);
+    console.log();
 }//end for loop
 
 console.log("Total value of coins is " + dollarFormat.format(totalValue));
 
-/*
 console.log("======================================================");
+/*
 for ( let i = 0; i < coinNames.length; i++) {
     console.log(coinNames[i]);
-    console.log(coinValue[i]);
+    console.log(dollarFormat.format(coinValue[i]));
 }//end for loop
 */
