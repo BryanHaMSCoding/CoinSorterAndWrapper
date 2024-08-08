@@ -20,15 +20,25 @@ const coinAmount = [300, 300, 300, 300];
 const coinsPerWrapper = [50, 40, 50, 40];
 let totalValue = 0;
 debugger
-for (let i = 0 ; i < coinNames.length; i++) {
+for (let i = 0; i < coinNames.length; i++) {
     
     totalValue += coinValue[i] * coinAmount[i];
 
     let wrappersNeeded = Math.floor(coinAmount[i] / coinsPerWrapper[i]);
     let remainingCoins = coinAmount[i] % coinsPerWrapper[i];
+    let valueOfCoins = coinAmount[i] * coinValue[i];
 
     console.log(`Wrappers needed for ${coinNames[i]} is ${wrappersNeeded}`);
     console.log(`Remaining ${coinNames[i]}: ${remainingCoins}`);
+    console.log(`Value of ${coinNames[i]} is ${dollarFormat.format(valueOfCoins)}`);
 }//end for loop
 
 console.log("Total value of coins is " + dollarFormat.format(totalValue));
+
+/*
+console.log("======================================================");
+for ( let i = 0; i < coinNames.length; i++) {
+    console.log(coinNames[i]);
+    console.log(coinValue[i]);
+}//end for loop
+*/
